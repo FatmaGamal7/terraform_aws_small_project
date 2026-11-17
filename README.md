@@ -25,8 +25,6 @@ flowchart LR
     TF -.-> State[(Remote backend)]
 ```
 
-> TODO: add an exported architecture image to `docs/architecture.png`.
-
 ## Tech Stack
 
 | Area | Tools |
