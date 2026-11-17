@@ -86,7 +86,7 @@ The environment name, region, project name, owner, and base instance count are s
 terraform init
 
 # 2. Import the existing VPC into the state (first run only)
-terraform import aws_vpc.imported_vpc <your-vpc-id>
+terraform import aws_vpc.imported_vpc <vpc-id>
 
 # 3. Review and apply
 terraform plan
