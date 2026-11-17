@@ -102,24 +102,3 @@ curl http://<instance-public-ip>
 ```
 
 The page should return the message from the playbook (the `non-prod` security group allows port 80).
-
-### Clean up
-
-The VPC has `prevent_destroy` enabled, so `terraform destroy` will refuse to run. Remove the lifecycle block (or target the other resources) before destroying.
-
-## Security Notes
-
-- The private key is never committed. Keep `*.key`, `*.pem`, and `*.tfstate` in `.gitignore`.
-- SSH host key checking is disabled in the provisioner for convenience. Do not use this setting in production.
-
-## Possible Improvements
-
-- Replace the `local-exec` provisioner with user data or a separate configuration step (for example Ansible with a dynamic inventory).
-- Pass the private key path through a variable instead of a fixed value.
-- Restrict SSH access to a specific IP range.
-- Add input validation to the module variables.
-- Add a CI pipeline to run `terraform fmt`, `validate`, and `plan`.
-
-## Author
-
-Fatma Gamal, [LinkedIn](https://www.linkedin.com/in/fatmagamal7)
